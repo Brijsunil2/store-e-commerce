@@ -1,3 +1,6 @@
+# Color Palette
+- https://colorhunt.co/palette/362fd91aacac2e97a7eeeeee
+
 # API and CRUD
  - https://fakestoreapi.com/
  - Thrid Party API: Fake Store API (https://fakestoreapi.com/products)

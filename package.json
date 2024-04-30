@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Brijsunil2/yugioh-e-commerce.git"
+    "url": "git+https://github.com/Brijsunil2/store-e-commerce.git"
   },
   "author": "Sunil Brijlall <brijsunil2@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Brijsunil2/yugioh-e-commerce/issues"
+    "url": "https://github.com/Brijsunil2/store-e-commerce/issues"
   },
-  "homepage": "https://github.com/Brijsunil2/yugioh-e-commerce#readme"
+  "homepage": "https://github.com/Brijsunil2/store-e-commerce#readme"
 }
