@@ -9,6 +9,7 @@ header {
 header .site-logo {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 header .site-logo > img {

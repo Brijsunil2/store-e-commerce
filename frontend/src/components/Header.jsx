@@ -6,7 +6,7 @@ import SearchBar from "./SearchBar";
 const Header = () => {
   return (
     <header>
-      <div className="site-logo">
+      <a className="site-logo" href="/">
         <img
           src={shoppingbag}
           alt="Shopping bag logo for website"
@@ -14,7 +14,7 @@ const Header = () => {
           height="32"
         />
         <h1>Store E-Commerce</h1>
-      </div>
+      </a>
       <div className="header-right-items">
         <button className="cart-btn"><FaShoppingCart /> Cart</button>
       </div>
