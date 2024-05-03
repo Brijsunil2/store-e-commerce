@@ -5,10 +5,10 @@ const SearchBar = () => {
   return (
     <div className="search-bar">
       <form action="/action_page.php">
-        <input type="text" placeholder="Search.." name="search" />
-        <button className="search-btn" type="button">
+        <input type="search" placeholder="Search.." name="search" />
+        {/* <button className="search-btn" type="submit">
           <FaSearch />
-        </button>
+        </button> */}
       </form>
     </div>
   );
