@@ -7,12 +7,15 @@ header {
 }
 
 header .site-logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
+  width: fit-content;
 }
 
-header .site-logo > img {
+header .site-logo > a{
+  display: flex;
+  align-items: center;
+}
+
+header .site-logo img {
   padding-bottom: 6px;
 }
 

@@ -13,3 +13,7 @@ header {
   background-color: #362FD9;
   padding: 1rem 3rem;
 }
+
+a {
+  text-decoration: none;
+}
