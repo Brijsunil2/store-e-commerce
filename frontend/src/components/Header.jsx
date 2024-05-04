@@ -23,7 +23,7 @@ const Header = () => {
           <FaShoppingCart /> Cart
         </button>
       </div>
-      <SearchBar></SearchBar>
+      <SearchBar placeholder="Search Products.."></SearchBar>
     </header>
   );
 };
