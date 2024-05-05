@@ -1,9 +1,15 @@
 import "./styles/App.css";
 import Header from "./components/Header";
+import FiltersSection from "./components/FiltersSection";
+import ProductsSection from "./components/ProductsSection";
 
 function App() {
   return (<>
-    <Header></Header>
+    <Header/>
+    <div className="body-container">
+      <FiltersSection/>
+      <ProductsSection/>
+    </div>
   </>);
 }
 

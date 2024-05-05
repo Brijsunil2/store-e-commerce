@@ -39,10 +39,10 @@ header .header-right-items .cart-btn {
   color: white;
   font-size: 1em;
   font-style: italic;
-  background-color: #1AACAC;
+  background-color: var(--color-two);
 }
 
 header .header-right-items .cart-btn:hover {
-  background-color: #1a9b9b;
+  background-color: var(--color-three);
   cursor: pointer;
 }

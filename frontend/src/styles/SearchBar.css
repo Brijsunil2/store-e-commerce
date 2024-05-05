@@ -19,11 +19,11 @@
 }
 
 .search-bar input[type="search"]:focus {
-  border: 2px solid #1AACAC;
+  border: 2px solid var(--color-two);
 }
 
 .search-bar .search-bar-btn:hover {
-  background-color: #1a9b9b;
+  background-color: var(--color-three);
   cursor: pointer;
 }
 
@@ -31,7 +31,7 @@
   position: absolute;
   right: 0;
   padding: 0 1.5rem;
-  background-color: #1AACAC;
+  background-color: var(--color-two);
   border: none;
   height: 100%;
   border-radius: 0 2rem 2rem 0;

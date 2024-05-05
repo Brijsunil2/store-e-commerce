@@ -4,16 +4,47 @@
   font-family: "Roboto", sans-serif;
 }
 
+:root {
+  --color-one: #362FD9;
+  --color-two: #1AACAC;
+  --color-three: #2E97A7;
+  --color-four: #EEEEEE;
+}
+
 h1 {
   color: white;
   font-size: 1.3em;
 }
 
 header {
-  background-color: #362FD9;
+  background-color: var(--color-one);
   padding: 1rem 3rem;
 }
 
 a {
   text-decoration: none;
+}
+
+.body-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  margin: 3rem 20%;
+  gap: 1.5rem;
+}
+
+.body-container .filterssection-container {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.body-container .productssection-container {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  background-color: var(--color-one);
+}
+
+@media screen and (max-width: 768px) {
+  .body-container {
+    display: flex; 
+  }
 }

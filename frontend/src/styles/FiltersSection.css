@@ -1,0 +1,5 @@
+.filterssection-container {
+  width: 100%;
+  border: 1px var(--color-four) solid;
+  padding: 0.5rem;
+}
