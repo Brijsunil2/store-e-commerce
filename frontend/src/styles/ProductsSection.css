@@ -1,5 +1,7 @@
 .productssection-container {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
   width: 100%;
   padding: 0.5rem;
 }

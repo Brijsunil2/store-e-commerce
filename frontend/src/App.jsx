@@ -6,7 +6,7 @@ import ProductsSection from "./components/ProductsSection";
 import { getProducts } from "./util/storeAPIFunc";
 
 function App() {
-  const [products, setProducts] = useState({});
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     getProducts().then(res => setProducts(res))
@@ -16,7 +16,7 @@ function App() {
     <Header/>
     <div className="body-container">
       <FiltersSection/>
-      <ProductsSection/>
+      <ProductsSection products={products}/>
     </div>
   </>);
 }

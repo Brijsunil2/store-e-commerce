@@ -1,0 +1,15 @@
+.productsection-container {
+  width: 100%;
+  height: auto;
+  background-color: aliceblue;
+}
+.productsection-container .product-img-container {
+  width: 84px;
+  height: auto;
+  background-color: white;
+}
+
+.productsection-container img {
+  max-width: 100%;
+  height: auto;
+}
