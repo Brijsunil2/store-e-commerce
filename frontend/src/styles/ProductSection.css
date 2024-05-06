@@ -6,6 +6,20 @@
 }
 
 .productsection-container .product-img-container > img {
-  max-width: auto;
-  height: 100px;
+  width: auto;
+  max-height: 100px;
+}
+
+@media screen and (max-width: 992px) {
+  .productsection-container {
+    display: flex; 
+    height: 200px;
+    border-bottom: 1px solid var(--color-four);
+  }
+
+  .productsection-container .product-img-container > img {
+    max-width: 100px;
+    max-height: none;
+    height: auto;
+  }
 }

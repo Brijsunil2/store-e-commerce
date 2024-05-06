@@ -6,6 +6,23 @@
   padding: 1rem;
 }
 
-.product-title, .product-price, .addtocart-btn {
-  padding: 6px 0;
+.productssection-container .product-title, .product-price, .addtocart-btn {
+  margin: 6px 0;
+}
+
+.productssection-container .addtocart-btn {
+  padding: 0.3rem 0.5rem;
+}
+
+.productssection-container .addtocart-btn:hover {
+  background-color: rgb(173, 173, 173);
+}
+
+@media screen and (max-width: 992px) {
+  .productssection-container {
+    display: flex; 
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

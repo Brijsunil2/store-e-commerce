@@ -25,6 +25,12 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+  border: none;
+  background-color: var(--color-four);
+}
+
 .body-container {
   display: grid;
   grid-template-columns: 1fr 3fr;

@@ -32,7 +32,6 @@ header .header-right-items {
 }
 
 header .header-right-items .cart-btn {
-  display: flex;
   padding: 0.5em 1em;
   background: none;
   border: none;
