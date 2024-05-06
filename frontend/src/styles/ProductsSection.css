@@ -3,5 +3,9 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   width: 100%;
-  padding: 0.5rem;
+  padding: 1rem;
+}
+
+.product-title, .product-price, .addtocart-btn {
+  padding: 6px 0;
 }

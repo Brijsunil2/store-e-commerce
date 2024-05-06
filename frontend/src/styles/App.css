@@ -42,12 +42,18 @@ a {
 .body-container .productssection-container {
   grid-column-start: 2;
   grid-column-end: 4;
-  background-color: var(--color-one);
 }
 
 @media screen and (max-width: 992px) {
   .body-container {
     display: flex; 
     flex-direction: column;
+    padding: 3rem 10%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .body-container {
+    padding: 3rem 10%;
   }
 }

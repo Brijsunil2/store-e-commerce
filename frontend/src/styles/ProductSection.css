@@ -1,15 +1,11 @@
-.productsection-container {
-  width: 100%;
-  height: auto;
-  background-color: aliceblue;
-}
+
 .productsection-container .product-img-container {
-  width: 84px;
-  height: auto;
   background-color: white;
+  text-align: center;
+  padding: 1rem;
 }
 
-.productsection-container img {
-  max-width: 100%;
-  height: auto;
+.productsection-container .product-img-container > img {
+  max-width: auto;
+  height: 100px;
 }

@@ -9,7 +9,6 @@ const ProductSection = ({ product }) => {
       <h4 className="product-title">{product.title}</h4>
       <h3 className="product-price">${parseFloat(product.price).toFixed(2)}</h3>
       <button type="button">+ Add to Cart</button>
-      {console.log(product)}
     </div>
   );
 };
