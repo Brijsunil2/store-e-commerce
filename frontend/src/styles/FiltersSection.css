@@ -2,4 +2,9 @@
   width: 100%;
   border: 1px var(--color-four) solid;
   padding: 0.5rem;
+  height: fit-content;
+}
+
+.filterssection-container .filter-checkbox {
+  margin: 0.5em 1em;
 }

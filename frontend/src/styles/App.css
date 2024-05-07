@@ -50,6 +50,10 @@ button {
   grid-column-end: 4;
 }
 
+.body-container input[type="checkbox"] {
+  accent-color: var(--color-two);
+}
+
 @media screen and (max-width: 992px) {
   .body-container {
     display: flex; 
