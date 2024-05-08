@@ -14,17 +14,12 @@ function App() {
     getProducts().then((res) => setProducts(res));
     getCategories().then((res) => {
       setCategories([...res]);
-      setFilters({
-        ...filters,
-        categories: [...res]
-      });
     });
   }, [
     setProducts,
     getProducts,
     setCategories,
     getCategories,
-    setFilters,
   ]);
 
 
