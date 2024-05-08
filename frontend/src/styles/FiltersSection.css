@@ -5,6 +5,10 @@
   height: fit-content;
 }
 
+.filterssection-container h3 {
+  margin-bottom: 0.2rem;
+}
+
 .filterssection-container .filter-checkbox {
   margin: 0.5em 1em;
 }
