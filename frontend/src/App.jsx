@@ -6,29 +6,37 @@ import ProductsSection from "./components/ProductsSection";
 import { getProducts, getCategories } from "./util/storeAPIFunc";
 
 function App() {
+  const [database, setDatabase] = useState([]);
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [filters, setFilters] = useState({categories: []});
+  const [filters, setFilters] = useState({ categories: [] });
 
   useEffect(() => {
-    getProducts().then((res) => setProducts(res));
+    getProducts().then((res) => {
+      setDatabase(res);
+      setProducts([...res]);
+    });
     getCategories().then((res) => {
       setCategories([...res]);
     });
-  }, [
-    setProducts,
-    getProducts,
-    setCategories,
-    getCategories,
-  ]);
+  }, [setProducts, getProducts, setCategories, getCategories]);
 
-
+  const searchFunc = async (searchText) => {
+    const temp = database.filter((prod) =>
+      prod.title.toLowerCase().includes(searchText.toLowerCase())
+    );
+    setProducts([...temp]);
+  };
 
   return (
     <>
-      <Header />
+      <Header searchFunc={searchFunc} />
       <div className="body-container">
-        <FiltersSection mainCategories={categories} filters={filters} setFilters={setFilters} />
+        <FiltersSection
+          mainCategories={categories}
+          filters={filters}
+          setFilters={setFilters}
+        />
         <ProductsSection products={products} filters={filters} />
       </div>
     </>

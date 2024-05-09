@@ -6,6 +6,11 @@
   padding: 1rem;
 }
 
+.productssection-container > h2 {
+  color: rgb(189, 189, 189);
+  text-align: center;
+}
+
 .productssection-container .product-title, .product-price, .addtocart-btn {
   margin: 6px 0;
 }

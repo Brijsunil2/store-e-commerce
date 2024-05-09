@@ -3,7 +3,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import shoppingbag from "../assets/bag.png";
 import SearchBar from "./SearchBar";
 
-const Header = () => {
+const Header = ({searchFunc}) => {
   return (
     <header>
       <div className="site-logo" >
@@ -23,7 +23,7 @@ const Header = () => {
           <FaShoppingCart /> Cart
         </button>
       </div>
-      <SearchBar placeholder="Search Products.."></SearchBar>
+      <SearchBar placeholder="Search Products.." searchFunc={searchFunc}></SearchBar>
     </header>
   );
 };

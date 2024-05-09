@@ -4,8 +4,6 @@ import { v4 as uuidv4 } from "uuid";
 
 const FiltersSection = ({ mainCategories, filters, setFilters }) => {
   const handleFilterCheckboxes = (e) => {
-    console.log(e.target);
-
     if (e.target.checked) {
       setFilters({
         ...filters,
