@@ -17,10 +17,13 @@
 
 .productssection-container .addtocart-btn {
   padding: 0.3rem 0.5rem;
+  background-color: var(--color-two);
+  color: white;
+  min-width: 130px;
 }
 
 .productssection-container .addtocart-btn:hover {
-  background-color: rgb(173, 173, 173);
+  background-color: var(--color-three);
 }
 
 @media screen and (max-width: 992px) {

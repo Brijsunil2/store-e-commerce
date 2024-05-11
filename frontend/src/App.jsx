@@ -5,14 +5,21 @@ import FiltersSection from "./components/FiltersSection";
 import ProductsSection from "./components/ProductsSection";
 import { getProducts, getCategories } from "./util/storeAPIFunc";
 
+const getLocalStorageItem = (key) => {
+  const cart = localStorage.getItem(key)
+  return JSON.parse(cart) || []
+}
+
 function App() {
   const [database, setDatabase] = useState([]);
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => getLocalStorageItem("cart"));
   const [categories, setCategories] = useState([]);
   const [filters, setFilters] = useState({ categories: [] });
 
   useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart))
+
     getProducts().then((res) => {
       setDatabase(res);
       setProducts([...res]);
@@ -20,13 +27,13 @@ function App() {
     getCategories().then((res) => {
       setCategories([...res]);
     });
-  }, [setProducts, getProducts, setCategories, getCategories]);
+  }, [setProducts, getProducts, setCategories, getCategories, cart]);
 
   const searchFunc = async (searchText) => {
     const temp = database.filter((prod) =>
       prod.title.toLowerCase().includes(searchText.toLowerCase())
     );
-    setProducts([...temp]);
+    setProducts([...temp, cart]);
   };
 
   return (
@@ -38,7 +45,12 @@ function App() {
           filters={filters}
           setFilters={setFilters}
         />
-        <ProductsSection products={products} filters={filters} cart={cart} setCart={setCart}/>
+        <ProductsSection
+          products={products}
+          filters={filters}
+          cart={cart}
+          setCart={setCart}
+        />
       </div>
     </>
   );

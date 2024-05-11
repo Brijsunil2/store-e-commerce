@@ -5,10 +5,14 @@
 }
 
 :root {
-  --color-one: #362FD9;
-  --color-two: #1AACAC;
-  --color-three: #2E97A7;
+  --color-one: #151515;
+  --color-two: #A91D3A;
+  --color-three: #C73659;
   --color-four: #EEEEEE;
+}
+
+body {
+  background-color: rgb(252, 251, 255);
 }
 
 h1 {

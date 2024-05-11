@@ -1,5 +1,5 @@
 # Color Palette
-- https://colorhunt.co/palette/362fd91aacac2e97a7eeeeee
+- https://colorhunt.co/palette/151515a91d3ac73659eeeeee
 
 # API and CRUD
  - https://fakestoreapi.com/
