@@ -8,6 +8,7 @@ import { getProducts, getCategories } from "./util/storeAPIFunc";
 function App() {
   const [database, setDatabase] = useState([]);
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
   const [categories, setCategories] = useState([]);
   const [filters, setFilters] = useState({ categories: [] });
 
@@ -37,7 +38,7 @@ function App() {
           filters={filters}
           setFilters={setFilters}
         />
-        <ProductsSection products={products} filters={filters} />
+        <ProductsSection products={products} filters={filters} cart={cart} setCart={setCart}/>
       </div>
     </>
   );

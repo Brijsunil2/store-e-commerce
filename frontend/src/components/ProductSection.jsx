@@ -1,9 +1,6 @@
 import "../styles/ProductSection.css";
 
-const ProductSection = ({ product }) => {
-  const handleAddToCart = (e) => {
-    console.log(e.target.value);
-  };
+const ProductSection = ({ product, addToCart, removeFromCart }) => {
 
   return (
     <div className="productsection-container">
@@ -15,12 +12,13 @@ const ProductSection = ({ product }) => {
         <h3 className="product-price">
           ${parseFloat(product.price).toFixed(2)}
         </h3>
+  
         <button
           className="addtocart-btn"
           key={product.id}
           value={product.id}
           type="button"
-          onClick={handleAddToCart}
+          onClick={() => addToCart(product.id)}
         >
           + Add to Cart
         </button>
