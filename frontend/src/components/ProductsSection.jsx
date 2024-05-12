@@ -8,14 +8,10 @@ const ProductsSection = ({ products, filters, cart, setCart }) => {
     if (!foundProduct) {
       setCart([...cart, { id: prodID, quantity: 1 }]);
     }
-
-    console.log(cart)
   };
 
   const removeFromCart = (prodID) => {
     setCart(cart.filter((cartItem) => cartItem.id !== prodID));
-
-    console.log(cart)
   };
 
   return (
@@ -30,8 +26,9 @@ const ProductsSection = ({ products, filters, cart, setCart }) => {
             <ProductSection
               key={product.id}
               product={product}
+              inCart={cart.find((cartItem) => cartItem.id === product.id) ? true : false}
               addToCart={addToCart}
-              removeFromCart={removeFromCart}
+              removeFromCart ={removeFromCart}
             />
           );
         }

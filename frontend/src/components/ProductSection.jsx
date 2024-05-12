@@ -1,7 +1,6 @@
 import "../styles/ProductSection.css";
 
-const ProductSection = ({ product, addToCart, removeFromCart }) => {
-
+const ProductSection = ({ product, inCart, addToCart, removeFromCart }) => {
   return (
     <div className="productsection-container">
       <div className="product-img-container">
@@ -12,15 +11,24 @@ const ProductSection = ({ product, addToCart, removeFromCart }) => {
         <h3 className="product-price">
           ${parseFloat(product.price).toFixed(2)}
         </h3>
-  
+
         <button
           className="addtocart-btn"
           key={product.id}
           value={product.id}
           type="button"
-          onClick={() => addToCart(product.id)}
+          onClick={() => {
+            if (inCart) {
+              removeFromCart(product.id)
+            } else {
+              addToCart(product.id)
+            }
+          }}
         >
-          + Add to Cart
+          {
+            inCart ? "Remove from Cart" : "Add to Cart"
+          }
+
         </button>
       </div>
     </div>
