@@ -36,6 +36,14 @@ function App() {
     setProducts([...temp, cart]);
   };
 
+  const CartItems = async () => {
+    const cartItems = []
+
+    
+
+    return cartItems
+  }
+
   return (
     <>
       <Header searchFunc={searchFunc} />
