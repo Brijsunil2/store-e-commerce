@@ -21,4 +21,4 @@ const getProductsByCategory = async (category, limit = null) => {
 }
 
 
-export { getProducts, getCategories, getProductsByCategory };
+export { getProducts, getProductByID, getCategories, getProductsByCategory };

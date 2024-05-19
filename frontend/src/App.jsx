@@ -3,12 +3,15 @@ import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import FiltersSection from "./components/FiltersSection";
 import ProductsSection from "./components/ProductsSection";
-import { getProducts, getCategories } from "./util/storeAPIFunc";
+import {
+  getProducts,
+  getCategories,
+} from "./util/storeAPIFunc";
 
 const getLocalStorageItem = (key) => {
-  const cart = localStorage.getItem(key)
-  return JSON.parse(cart) || []
-}
+  const cart = localStorage.getItem(key);
+  return JSON.parse(cart) || [];
+};
 
 function App() {
   const [database, setDatabase] = useState([]);
@@ -18,7 +21,7 @@ function App() {
   const [filters, setFilters] = useState({ categories: [] });
 
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart))
+    localStorage.setItem("cart", JSON.stringify(cart));
 
     getProducts().then((res) => {
       setDatabase(res);
@@ -35,14 +38,6 @@ function App() {
     );
     setProducts([...temp, cart]);
   };
-
-  const CartItems = async () => {
-    const cartItems = []
-
-    
-
-    return cartItems
-  }
 
   return (
     <>

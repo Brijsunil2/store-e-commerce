@@ -2,7 +2,6 @@ import "../styles/Header.css";
 import { FaShoppingCart } from "react-icons/fa";
 import shoppingbag from "../assets/bag.png";
 import SearchBar from "./SearchBar";
-import CartPopupWindow from "./CartPopupWindow";
 import { useState } from "react";
 
 const Header = ({searchFunc}) => {
@@ -28,8 +27,6 @@ const Header = ({searchFunc}) => {
         </button>
       </div>
       <SearchBar placeholder="Search Products.." searchFunc={searchFunc}></SearchBar>
-
-      {popup && <CartPopupWindow setPopup={setPopup}/>}
     </header>
   );
 };
