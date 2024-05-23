@@ -2,14 +2,15 @@ import "../styles/Header.css";
 import { FaShoppingCart } from "react-icons/fa";
 import shoppingbag from "../assets/bag.png";
 import SearchBar from "./SearchBar";
+import CartPopup from "./CartPopup";
 import { useState } from "react";
 
-const Header = ({searchFunc}) => {
+const Header = ({ searchFunc }) => {
   const [popup, setPopup] = useState(false);
 
   return (
     <header>
-      <div className="site-logo" >
+      <div className="site-logo">
         <a href="/">
           <img
             src={shoppingbag}
@@ -22,11 +23,16 @@ const Header = ({searchFunc}) => {
       </div>
 
       <div className="header-right-items">
-        <button className="cart-btn" onClick={() => setPopup(!popup)}>
+        <button className="cart-btn" onClick={() => setPopup(true)}>
           <FaShoppingCart /> Cart
         </button>
       </div>
-      <SearchBar placeholder="Search Products.." searchFunc={searchFunc}></SearchBar>
+      <SearchBar
+        placeholder="Search Products.."
+        searchFunc={searchFunc}
+      ></SearchBar>
+
+      <CartPopup popup={popup} setPopup={setPopup}/>
     </header>
   );
 };
