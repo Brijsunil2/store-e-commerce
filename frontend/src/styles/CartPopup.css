@@ -9,17 +9,18 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 22rem;
+  width: 0;
   height: 100vh;
   z-index: 3;
   background-color: white;
-  display: none;
+  display: block;
   overflow: hidden;
   border-left: solid 1px gray;
+  transition: 1s;
 }
 
-.cart-popup-show {
-  display: block;
+.cart-popup-active {
+  width: 22rem;
 }
 
 .cart-popup-right > .cart-popup-header {
@@ -37,7 +38,6 @@
 .cart-popup-right > .cart-popup-header .close-popup svg {
   width: 100%;
   height: 100%;
-  transform: scale(2);
   color: var(--color-five);
 }
 
@@ -48,4 +48,8 @@
 .cart-popup-right > .cart-popup-header .close-popup svg:active {
   color: red;
   transform: scale(1.5);
+}
+
+.cart-popup-right > .cart-popup-header, .cart-popup-body, .cart-popup-footer {
+  min-width: 20rem;
 }
