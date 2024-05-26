@@ -20,10 +20,12 @@
   background-color: var(--color-two);
   color: white;
   min-width: 130px;
+  transition: 0.5s;
 }
 
 .productssection-container .addtocart-btn:hover {
   background-color: var(--color-three);
+  color: black;
 }
 
 @media screen and (max-width: 992px) {

@@ -39,9 +39,11 @@ header .header-right-items .cart-btn {
   font-size: 1em;
   font-style: italic;
   background-color: var(--color-two);
+  transition: 0.5s;
 }
 
 header .header-right-items .cart-btn:hover {
   background-color: var(--color-three);
   cursor: pointer;
+  color: black;
 }

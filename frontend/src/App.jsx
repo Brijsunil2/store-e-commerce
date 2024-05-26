@@ -41,7 +41,7 @@ function App() {
 
   return (
     <>
-      <Header searchFunc={searchFunc} />
+      <Header searchFunc={searchFunc} cart={cart} setCart={setCart} />
       <div className="body-container">
         <FiltersSection
           mainCategories={categories}

@@ -13,7 +13,7 @@ const ProductSection = ({ product, inCart, addToCart, removeFromCart }) => {
         </h3>
 
         <button
-          className="addtocart-btn"
+          className={`addtocart-btn ${inCart && "active"}`}
           key={product.id}
           value={product.id}
           type="button"

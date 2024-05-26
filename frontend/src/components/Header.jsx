@@ -5,7 +5,7 @@ import SearchBar from "./SearchBar";
 import CartPopup from "./CartPopup";
 import { useState } from "react";
 
-const Header = ({ searchFunc }) => {
+const Header = ({ searchFunc, cart, setCart }) => {
   const [popup, setPopup] = useState(false);
 
   return (
@@ -32,7 +32,7 @@ const Header = ({ searchFunc }) => {
         searchFunc={searchFunc}
       ></SearchBar>
 
-      <CartPopup popup={popup} setPopup={setPopup}/>
+      <CartPopup popup={popup} setPopup={setPopup} cart={cart} setCart={setCart} />
     </header>
   );
 };

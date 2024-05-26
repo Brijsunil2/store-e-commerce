@@ -25,9 +25,11 @@
 .search-bar .search-bar-btn:hover {
   background-color: var(--color-three);
   cursor: pointer;
+  color: black;
 }
 
 .search-bar .search-bar-btn {
+  color: white;
   position: absolute;
   right: 0;
   padding: 0 1.5rem;
@@ -36,4 +38,5 @@
   height: 100%;
   border-radius: 0 2rem 2rem 0;
   transform: translate(1px);
+  transition: 0.5s;
 }

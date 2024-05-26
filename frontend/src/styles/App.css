@@ -5,11 +5,13 @@
 }
 
 :root {
-  --color-one: #151515;
-  --color-two: #A91D3A;
-  --color-three: #C73659;
+  --color-one: #226B80;
+  --color-two: #35B0AB;
+  --color-three: #C5F0A4;
   --color-four: #EEEEEE;
   --color-five: #ebebeb;
+  --color-six: #F34573;
+  --color-seven: #4B56D2;
 }
 
 body {
