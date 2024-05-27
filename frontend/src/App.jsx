@@ -6,6 +6,7 @@ import ProductsSection from "./components/ProductsSection";
 import {
   getProducts,
   getCategories,
+  getProductByID
 } from "./util/storeAPIFunc";
 
 const getLocalStorageItem = (key) => {
@@ -20,6 +21,18 @@ function App() {
   const [categories, setCategories] = useState([]);
   const [filters, setFilters] = useState({ categories: [] });
 
+  const getCartDetails = async () => {
+    const detailedCart = []
+
+    await cart.forEach((item) => {
+      getProductByID(item.id).then((res) => {
+        detailedCart.push(res);
+      })
+    })
+
+    return detailedCart;
+  }
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
 
@@ -30,7 +43,7 @@ function App() {
     getCategories().then((res) => {
       setCategories([...res]);
     });
-  }, [setProducts, getProducts, setCategories, getCategories, cart]);
+  }, []);
 
   const searchFunc = async (searchText) => {
     const temp = database.filter((prod) =>

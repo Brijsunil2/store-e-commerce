@@ -31,7 +31,7 @@ const Header = ({ searchFunc, cart, setCart }) => {
         placeholder="Search Products.."
         searchFunc={searchFunc}
       ></SearchBar>
-
+      
       <CartPopup popup={popup} setPopup={setPopup} cart={cart} setCart={setCart} />
     </header>
   );

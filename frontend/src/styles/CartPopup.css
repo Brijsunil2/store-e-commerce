@@ -5,6 +5,20 @@
   100% {transform: translateX(-100%);}
 }
 
+.dim-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  background-color: rgba(248, 255, 248, 0.3);
+}
+
+.invisible-background {
+  display: none;
+}
+
 .cart-popup-right {
   position: fixed;
   top: 0;
