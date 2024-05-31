@@ -3,6 +3,7 @@ import { IoMdClose } from "react-icons/io";
 import { v4 as uuidv4 } from "uuid";
 
 const CartPopup = ({ popup, setPopup, cart, setCart }) => {
+
   return (
     <>
       <div className={popup ? "dim-background" : "invisible-background"}> </div>

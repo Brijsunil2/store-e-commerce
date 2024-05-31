@@ -5,8 +5,7 @@ import FiltersSection from "./components/FiltersSection";
 import ProductsSection from "./components/ProductsSection";
 import {
   getProducts,
-  getCategories,
-  getProductByID
+  getCategories
 } from "./util/storeAPIFunc";
 
 const getLocalStorageItem = (key) => {
@@ -33,8 +32,15 @@ function App() {
     return detailedCart;
   }
 
+  const searchFunc = async (searchText) => {
+    const temp = database.filter((prod) =>
+      prod.title.toLowerCase().includes(searchText.toLowerCase())
+    );
+    setProducts([...temp, cart]);
+  };
+
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart, ["id", "quantity"]));
 
     getProducts().then((res) => {
       setDatabase(res);
@@ -43,14 +49,7 @@ function App() {
     getCategories().then((res) => {
       setCategories([...res]);
     });
-  }, []);
-
-  const searchFunc = async (searchText) => {
-    const temp = database.filter((prod) =>
-      prod.title.toLowerCase().includes(searchText.toLowerCase())
-    );
-    setProducts([...temp, cart]);
-  };
+  }, [cart]);
 
   return (
     <>
