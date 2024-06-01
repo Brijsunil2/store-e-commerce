@@ -1,11 +1,12 @@
 import "./styles/App.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Header from "./components/Header";
 import FiltersSection from "./components/FiltersSection";
 import ProductsSection from "./components/ProductsSection";
 import {
   getProducts,
-  getCategories
+  getCategories,
+  getProductByID,
 } from "./util/storeAPIFunc";
 
 const getLocalStorageItem = (key) => {
@@ -14,23 +15,23 @@ const getLocalStorageItem = (key) => {
 };
 
 function App() {
+  const ref = useRef(true)
   const [database, setDatabase] = useState([]);
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState(() => getLocalStorageItem("cart"));
   const [categories, setCategories] = useState([]);
   const [filters, setFilters] = useState({ categories: [] });
 
-  const getCartDetails = async () => {
-    const detailedCart = []
+  const updateCart = async () => {
+    const detailedCart = [];
 
     await cart.forEach((item) => {
       getProductByID(item.id).then((res) => {
-        detailedCart.push(res);
-      })
-    })
-
-    return detailedCart;
-  }
+        detailedCart.push({ ...res, quantity: item.quantity });
+      });
+    });
+    setCart(detailedCart)
+  };
 
   const searchFunc = async (searchText) => {
     const temp = database.filter((prod) =>
@@ -46,9 +47,16 @@ function App() {
       setDatabase(res);
       setProducts([...res]);
     });
+
     getCategories().then((res) => {
       setCategories([...res]);
     });
+
+    if (ref.current) {
+      updateCart();
+      ref.current = false
+    }
+    
   }, [cart]);
 
   return (
