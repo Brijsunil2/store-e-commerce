@@ -1,12 +1,15 @@
 import "../styles/ProductsSection.css";
 import ProductSection from "./ProductSection";
+import { getProductByID } from "../util/storeAPIFunc";
 
 const ProductsSection = ({ products, filters, cart, setCart }) => {
   const addToCart = (prodID) => {
     const foundProduct = cart.find((cartItem) => cartItem.id === prodID);
 
     if (!foundProduct) {
-      setCart([...cart, { id: prodID, quantity: 1 }]);
+      getProductByID(prodID).then((res) => {
+        setCart([...cart, { ...res, quantity: 1 }]);
+      });
     }
   };
 
