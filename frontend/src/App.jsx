@@ -1,5 +1,5 @@
 import "./styles/App.css";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import FiltersSection from "./components/FiltersSection";
 import ProductsSection from "./components/ProductsSection";
@@ -9,55 +9,57 @@ import {
   getProductByID,
 } from "./util/storeAPIFunc";
 
-const getLocalStorageItem = (key) => {
-  const cart = localStorage.getItem(key);
-  return JSON.parse(cart) || [];
-};
-
 function App() {
-  const ref = useRef(true)
   const [database, setDatabase] = useState([]);
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState(() => getLocalStorageItem("cart"));
+  const [cart, setCart] = useState([]);
   const [categories, setCategories] = useState([]);
   const [filters, setFilters] = useState({ categories: [] });
 
-  const updateCart = async () => {
-    const detailedCart = [];
-
-    await cart.forEach((item) => {
-      getProductByID(item.id).then((res) => {
-        detailedCart.push({ ...res, quantity: item.quantity });
-      });
-    });
-    setCart(detailedCart)
+  const updateCart = async (initialCart) => {
+    const detailedCart = await Promise.all(
+      initialCart.map(async (item) => {
+        const res = await getProductByID(item.id);
+        return { ...res, quantity: item.quantity };
+      })
+    );
+    setCart(detailedCart);
   };
 
   const searchFunc = async (searchText) => {
     const temp = database.filter((prod) =>
       prod.title.toLowerCase().includes(searchText.toLowerCase())
     );
-    setProducts([...temp, cart]);
+    setProducts([...temp, ...cart]);
   };
 
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart, ["id", "quantity"]));
-
-    getProducts().then((res) => {
-      setDatabase(res);
-      setProducts([...res]);
-    });
-
-    getCategories().then((res) => {
-      setCategories([...res]);
-    });
-
-    if (ref.current) {
-      updateCart();
-      ref.current = false
+    const data = localStorage.getItem("STORE_E_COMMERCE_CART");
+    if (data) {
+      const initialCart = JSON.parse(data);
+      updateCart(initialCart);
     }
-    
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(
+      "STORE_E_COMMERCE_CART",
+      JSON.stringify(cart.map(({ id, quantity }) => ({ id, quantity })))
+    );
   }, [cart]);
+
+  useEffect(() => {
+    const fetchInitialData = async () => {
+      const products = await getProducts();
+      const categories = await getCategories();
+
+      setDatabase(products);
+      setProducts(products);
+      setCategories(categories);
+    };
+
+    fetchInitialData();
+  }, []);
 
   return (
     <>
