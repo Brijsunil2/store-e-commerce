@@ -91,3 +91,88 @@
 .cart-popup-right > .cart-popup-header, .cart-popup-body, .cart-popup-footer {
   min-width: 20rem;
 }
+
+.cart-popup-right > .cart-popup-body {
+  margin: 0.5rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.cart-popup-right > .cart-popup-body .cart-item-container {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 5px;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-bottom: var(--color-five) solid 1px;
+  border-top: var(--color-five) solid 1px;
+}
+
+.cart-popup-right > .cart-popup-body .cart-item-container img {
+  width: 50px;
+  max-height: 4.9rem;
+  height: auto;
+  padding: 0.3rem;
+}
+
+.cart-popup-right > .cart-popup-body .cart-item-container .cart-item-image-container {
+  display: flex;
+  border: var(--color-five) solid 1px;
+  height: 5rem;
+  width: 5rem;
+  min-width: 5rem;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.cart-popup-right > .cart-popup-body .cart-item-container .cart-item-text-container {
+  padding: 0.5rem 0.2rem;
+  padding-bottom: 0;
+}
+
+.cart-popup-right > .cart-popup-body .cart-item-container .cart-item-options-container {
+  padding: 0.2em;
+  grid-column: 1 / 4;
+}
+
+.cart-popup-right > .cart-popup-body .cart-item-container .cart-item-options-container .quantity-input {
+  height: 1.3rem;
+  margin: 0 0.5rem;
+  max-width: 40px;
+  padding: 2px;
+  text-align: center;
+}
+
+.cart-popup-right > .cart-popup-body .cart-item-container .cart-item-options-container .circle-btn {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+.cart-popup-right > .cart-popup-body .cart-item-container .cart-item-options-container .circle-btn:hover {
+  scale: 1.05;
+}
+
+.cart-popup-right > .cart-popup-body .cart-item-container .cart-item-options-container .plus-btn {
+  background-color: var(--color-two);
+}
+
+.cart-popup-right > .cart-popup-body .cart-item-container .cart-item-options-container .minus-btn {
+  background-color: #5fcac7;
+}
+
+.cart-popup-right > .cart-popup-body .cart-item-container .cart-item-options-container .remove-btn {
+  float: inline-end;
+  height: 1.3rem;
+  padding: 3px 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cart-popup-right > .cart-popup-body .cart-item-container .cart-item-options-container .remove-btn:hover {
+  color: red;
+  scale: 1.05;
+  cursor: pointer;
+}
