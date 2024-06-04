@@ -4,6 +4,13 @@ import { v4 as uuidv4 } from "uuid";
 import { CiTrash } from "react-icons/ci";
 
 const CartPopup = ({ popup, setPopup, cart, setCart }) => {
+  const plusBtnOnClick = (cartItem) => {
+  };
+
+  const removeItemBtnOnClick = (cartItem) => {
+    setCart([...cart.filter((item) => item.id != cartItem.id)]);
+  }
+
   return (
     <>
       <div className={popup ? "dim-background" : "invisible-background"}> </div>
@@ -30,10 +37,23 @@ const CartPopup = ({ popup, setPopup, cart, setCart }) => {
                 </h3>
               </div>
               <div className="cart-item-options-container">
-                <button className="circle-btn plus-btn">+</button>
-                <input type="text" className="quantity-input" value={cartItem.quantity} onChange={() => cartItem.value} min="1" max="99" />
+                <button
+                  className="circle-btn plus-btn"
+                  onClick={() => plusBtnOnClick(cartItem)}
+                >
+                  +
+                </button>
+                <input
+                  type="number"
+                  className="quantity-input"
+                  defaultValue={cartItem.quantity}
+                  pattern="[0-9]"
+                  min="1"
+                  max="99"
+                  disabled="disabled"
+                />
                 <button className="circle-btn minus-btn">-</button>
-                <CiTrash className="remove-btn" />
+                <CiTrash className="remove-btn" onClick={() => removeItemBtnOnClick(cartItem)}/>
               </div>
             </div>
           ))}

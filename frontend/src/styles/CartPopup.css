@@ -176,3 +176,15 @@
   scale: 1.05;
   cursor: pointer;
 }
+
+
+/* Chrome, Safari, Edge, Opera */
+.cart-popup-right input::-webkit-outer-spin-button,.cart-popup-right input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.cart-popup-right input[type=number] {
+  -moz-appearance: textfield;
+}
