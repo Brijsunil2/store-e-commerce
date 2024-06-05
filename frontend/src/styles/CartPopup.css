@@ -183,8 +183,3 @@
   -webkit-appearance: none;
   margin: 0;
 }
-
-/* Firefox */
-.cart-popup-right input[type=number] {
-  -moz-appearance: textfield;
-}

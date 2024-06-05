@@ -32,7 +32,7 @@ const FiltersSection = ({ mainCategories, filters, setFilters }) => {
           Reset
         </button>
       </h4>
-      <form>
+      <form id="filterByForm">
         {mainCategories.map((category) => (
           <div key={uuidv4()} className="filter-checkbox">
             <input
@@ -45,7 +45,7 @@ const FiltersSection = ({ mainCategories, filters, setFilters }) => {
                 filters.categories.includes(category)
               }
             />
-            <label htmlFor={category}> {capaitalizeTitle(category)}</label>
+            <span> {capaitalizeTitle(category)}</span>
             <br />
           </div>
         ))}

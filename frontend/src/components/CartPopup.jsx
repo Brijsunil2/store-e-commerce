@@ -5,11 +5,32 @@ import { CiTrash } from "react-icons/ci";
 
 const CartPopup = ({ popup, setPopup, cart, setCart }) => {
   const plusBtnOnClick = (cartItem) => {
+    if (cartItem.quantity < 99) {
+      setCart(() =>
+        cart.map((item) =>
+          item.id === cartItem.id
+            ? { ...item, quantity: cartItem.quantity + 1 }
+            : item
+        )
+      );
+    }
+  };
+
+  const minusBtnOnClick = (cartItem) => {
+    if (cartItem.quantity > 1) {
+      setCart(() =>
+        cart.map((item) =>
+          item.id === cartItem.id
+            ? { ...item, quantity: cartItem.quantity - 1 }
+            : item
+        )
+      );
+    }
   };
 
   const removeItemBtnOnClick = (cartItem) => {
     setCart([...cart.filter((item) => item.id != cartItem.id)]);
-  }
+  };
 
   return (
     <>
@@ -45,15 +66,25 @@ const CartPopup = ({ popup, setPopup, cart, setCart }) => {
                 </button>
                 <input
                   type="number"
+                  name="quantity-input"
                   className="quantity-input"
                   defaultValue={cartItem.quantity}
-                  pattern="[0-9]"
+                  pattern="^(100|[1-9]?[0-9])$"
                   min="1"
                   max="99"
+                  step="1"
                   disabled="disabled"
                 />
-                <button className="circle-btn minus-btn">-</button>
-                <CiTrash className="remove-btn" onClick={() => removeItemBtnOnClick(cartItem)}/>
+                <button
+                  className="circle-btn minus-btn"
+                  onClick={() => minusBtnOnClick(cartItem)}
+                >
+                  -
+                </button>
+                <CiTrash
+                  className="remove-btn"
+                  onClick={() => removeItemBtnOnClick(cartItem)}
+                />
               </div>
             </div>
           ))}
