@@ -183,3 +183,10 @@
   -webkit-appearance: none;
   margin: 0;
 }
+
+
+@media screen and (max-width: 600px) {
+  .cart-popup-active {
+    width: 100%;
+  }
+}
